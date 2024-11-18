@@ -1,7 +1,22 @@
 
 <?php 
 
-require ("emp.php")
+require 'emp.php';
+if(isset( $_POST['first_name'])&& isset($_POST['last_name'])&& isset( $_POST['naissance'])&& isset($_POST['Nationalité'])&& isset($_POST['Genre'])){
+    $firstName = $_POST['first_name'];
+    $lastName = $_POST['last_name'];
+    $naissance = $_POST['naissance'];
+    $Nationalité = $_POST['Nationalité'];
+    $Genre = $_POST['Genre'];
+    if (empty($firstName)||empty($lastName)||empty($naissance)||empty($Nationalité)||empty($Genre)) {
+     echo 'folder is empty';
+    }else{
+        mysqli_query($con, "INSERT INTO logintbs (firstName, lastName, naissance, Nationalité, Genre) VALUES ('$firstName', '$lastName', '$naissance', '$Nationalité', '$Genre')");
+        echo 'done';
+    }
+}
+
+// echo $_POST['first_name']."<br>". $_POST['last_name']."<br>". $_POST['naissance']."<br>". $_POST['Nationalité']."<br>". $_POST['Genre'];
 
 ?>
 
@@ -15,7 +30,7 @@ require ("emp.php")
 </head>
 
 <body class="flex items-center justify-center min-h-screen bg-gray-100">
-    <form class="w-full max-w-lg bg-white p-6 rounded-lg shadow-md" action="emp.php" method ="POST">
+    <form class="w-full max-w-lg bg-white p-6 rounded-lg shadow-md" action="" method ="POST">
         <div class="flex flex-wrap -mx-3 mb-6">
             <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
                 <label class="block uppercase tracking-wide text-gray-700 text-xs font-bold mb-2" for="grid-first-name">
@@ -52,7 +67,7 @@ require ("emp.php")
                 Genre
                 </label>
                 <div class="relative">
-                    <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state" name=" Genre">
+                    <select class="block appearance-none w-full bg-gray-200 border border-gray-200 text-gray-700 py-3 px-4 pr-8 rounded leading-tight focus:outline-none focus:bg-white focus:border-gray-500" id="grid-state" name="Genre">
                         <option>F</option>
                         <option>M</option>
                        
