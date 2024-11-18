@@ -16,7 +16,6 @@ if(isset( $_POST['first_name'])&& isset($_POST['last_name'])&& isset( $_POST['na
     }
 }
 
-// echo $_POST['first_name']."<br>". $_POST['last_name']."<br>". $_POST['naissance']."<br>". $_POST['Nationalité']."<br>". $_POST['Genre'];
 
 ?>
 
@@ -30,6 +29,7 @@ if(isset( $_POST['first_name'])&& isset($_POST['last_name'])&& isset( $_POST['na
 </head>
 
 <body class="flex items-center justify-center min-h-screen bg-gray-100">
+    <h1 class="text-center text-red-500"></h1>
     <form class="w-full max-w-lg bg-white p-6 rounded-lg shadow-md" action="" method ="POST">
         <div class="flex flex-wrap -mx-3 mb-6">
             <div class="w-full md:w-1/2 px-3 mb-6 md:mb-0">
