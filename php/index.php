@@ -1,7 +1,7 @@
 
 <?php 
 
-require 'emp.php';
+require './php/emp.php';
 if(isset( $_POST['first_name'])&& isset($_POST['last_name'])&& isset( $_POST['naissance'])&& isset($_POST['Nationalité'])&& isset($_POST['Genre'])){
     $firstName = $_POST['first_name'];
     $lastName = $_POST['last_name'];
