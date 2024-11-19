@@ -134,5 +134,6 @@ if(isset( $_POST['first_name'])&& isset($_POST['last_name'])&& isset( $_POST['na
         </div>
     </div>
 </figure>
+
 </body>
 </html>
